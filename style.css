@@ -303,7 +303,7 @@ div.work__card img:active {
 
   section#showcase {
     align-items: center;
-    margin-top: 6rem;
+    padding-top: 6rem;
   }
 
   nav#header__main-nav {
@@ -314,6 +314,7 @@ div.work__card img:active {
     right: -30rem;
     background-color: var(--secondary-color);
     text-align: center;
+    z-index: 999;
   }
 
   .clicked {
