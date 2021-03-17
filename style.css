@@ -17,10 +17,12 @@
   --primary-color: #014d4e;
 
   /* Secondary Color */
-  --secondary-color: #ff9408;
+  /* --secondary-color: #ff9408ea; */
+  --secondary-color: #26b19aea;
 
   /* Secondary Color Modified */
   --secondary-color-m: #ff94088e;
+  --orange: rgb(198, 220, 0);
 
   /* tertiary color */
   --tertiary-color: #017374;
@@ -41,7 +43,8 @@ a:visited {
   font-size: 1.5rem;
 }
 body {
-  font-family: "Baloo Tamma 2", cursive;
+  font-family: "Baloo 2", cursive;
+  font-family: "Poppins", sans-serif;
   display: flex;
 }
 
@@ -161,6 +164,98 @@ ul.header__main-nav--links li a:active::after {
   transform: scaleX(1);
 }
 
+/********************** Showcase / Hero Sectoin   *********************/
+
+section#showcase {
+  height: 100vh;
+  background-image: url("img/green-poly.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+div.showcase__content {
+  background-color: var(--secondary-color);
+  padding: calc(1rem + 2vw);
+  height: calc(5rem + 20vmax);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  animation: hero 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+@keyframes hero {
+  0% {
+    transform: translateX(100rem) rotate(360deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.showcase__content--title {
+  font-size: calc(2rem + 3vw);
+  color: white;
+}
+.showcase__content--para {
+  font-family: "Indie Flower", cursive;
+  font-size: calc(1.5rem + 1vw);
+  color: white;
+}
+
+.showcase__content--link:link,
+.showcase__content--link:visited {
+  padding: 1rem;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  background-color: var(--orange);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+.showcase__content--link:link::after,
+.showcase__content--link:visited::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  z-index: -1;
+}
+.showcase__content--link:hover::after,
+.showcase__content--link:active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:900px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+@media screen and (max-width: 900px) {
+  /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Showcase / Hero Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+  section#showcase {
+    background-position: 100%;
+    align-items: flex-end;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
 /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:610px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
 @media screen and (max-width: 610px) {
   /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Main Nav Header *-*-*-*-**-*-*-*-**-*-*-*-**-*/
@@ -198,7 +293,8 @@ ul.header__main-nav--links li a:active::after {
   }
   .header__main-nav--hamburger:hover,
   .header__main-nav--hamburger:active {
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color-m);
+    background-color: var(--orange);
   }
 
   .line {
@@ -214,6 +310,7 @@ ul.header__main-nav--links li a:active::after {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    box-shadow: 5px 5px 8px, 15px 15px 8px #54340bb9;
   }
   ul.header__main-nav--links li {
     margin-bottom: 4vh;
@@ -257,5 +354,11 @@ ul.header__main-nav--links li a:active::after {
   }
   ul.header__main-nav--links li.fade {
     opacity: 1;
+  }
+  /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Showcase / Hero Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+
+  section#showcase {
+    background-position: 80%;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
