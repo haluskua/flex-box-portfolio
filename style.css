@@ -301,6 +301,11 @@ div.work__card img:active {
     position: absolute;
   } */
 
+  section#showcase {
+    align-items: center;
+    margin-top: 6rem;
+  }
+
   nav#header__main-nav {
     width: 30rem;
     height: 100%;
