@@ -123,14 +123,14 @@ ul.header__main-nav--links li {
   padding-right: 3vw;
 }
 
+position: relative;
 ul.header__main-nav--links li a {
-  position: relative;
   padding: 0.2rem 0.6rem;
   font-size: calc(1rem + 0.6667vw);
 }
 
-ul.header__main-nav--links li a:link::before,
 ul.header__main-nav--links li a:visited::before,
+ul.header__main-nav--links li a:link::before,
 ul.header__main-nav--links li a:link::after,
 ul.header__main-nav--links li a:visited::after {
   content: "";
@@ -144,21 +144,21 @@ ul.header__main-nav--links li a:visited::after {
   transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-ul.header__main-nav--links li a:link::before,
 ul.header__main-nav--links li a:visited::before {
+  ul.header__main-nav--links li a:link::before,
   top: 0;
   /* Transform origin is center by default */
   transform-origin: left;
 }
-ul.header__main-nav--links li a:link::after,
 ul.header__main-nav--links li a:visited::after {
+  ul.header__main-nav--links li a:link::after,
   bottom: 0;
   /* Transform origin is center by default */
   transform-origin: right;
 }
 
-ul.header__main-nav--links li a:hover::before,
 ul.header__main-nav--links li a:active::before,
+ul.header__main-nav--links li a:hover::before,
 ul.header__main-nav--links li a:hover::after,
 ul.header__main-nav--links li a:active::after {
   transform: scaleX(1);
@@ -371,6 +371,77 @@ section#about-me {
   transform-origin: top;
 }
 
+/*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Services Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+section#services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 6rem 2rem 2rem;
+  background-color: var(--primary-color);
+}
+
+.service {
+  padding: 4rem;
+  margin: 0 2rem 4rem;
+  flex-basis: 40rem;
+  flex-grow: 1;
+  background-color: var(--secondary-color);
+  border-bottom: 0.2rem solid var(--secondary-color);
+  border-right: 0.2rem solid var(--secondary-color);
+  border-left: 0.2rem solid var(--secondary-color);
+
+  position: relative;
+  z-index: 1;
+}
+
+.service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(1, 0, 0, 1);
+
+  z-index: -1;
+}
+
+.service:hover::after,
+.service:active::after {
+  transform: scaleX(1);
+}
+
+.service i,
+.services--title {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.service i {
+  color: white;
+}
+
+.services--title {
+  text-transform: uppercase;
+}
+
+.services--para {
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+  color: white;
+}
+
+/*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Services Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+
+
+
+
+
+
 /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:900px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
 @media screen and (max-width: 900px) {
   /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Showcase / Hero Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
@@ -382,6 +453,7 @@ section#about-me {
 }
 
 /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:610px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+
 @media screen and (max-width: 610px) {
   /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Main Nav Header *-*-*-*-**-*-*-*-**-*-*-*-**-*/
   /* header#header {
@@ -447,8 +519,8 @@ section#about-me {
     margin-bottom: 4vh;
     margin-left: 6vh;
   }
+  padding: 0.43rem 0.6rem;
   ul.header__main-nav--links li a {
-    padding: 0.43rem 0.6rem;
   }
 
   .clicked .line-1 {
