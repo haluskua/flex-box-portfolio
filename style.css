@@ -672,6 +672,45 @@ section#testimonials {
   filter: grayscale(50%);
 }
 
+/*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Contact Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+section#contact {
+  height: 100vh;
+  background-image: url("img/profile.jpg");
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.contact__form {
+  flex-basis: 40rem;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tertiary-color-m);
+}
+
+.contact__form input,
+.contact__form textarea {
+  color: white;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: var(--secondary-color) solid 0.1rem;
+}
+
+.contact__form textarea {
+  height: 30vh;
+}
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
 /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:1510px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
 @media screen and (min-width: 1510px) {
   body {
@@ -802,13 +841,31 @@ section#testimonials {
     background-position: 80%;
     transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
+}
 
+/*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* (max-width:460px) Mark *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+
+@media screen and (max-width: 460px) {
+  /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Testimonials Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
   .testimonials__card--content {
+    top: 0;
+    height: 100%;
     width: 100%;
+    /* transform: scaleY(0); */
+    transform-origin: bottom;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   .testimonials__card:hover .testimonials__card--content,
   .testimonials__card:active .testimonials__card--content {
-    top: 53%;
+    transform-origin: top;
+  }
+
+  /*-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-* Contact Section *-*-*-*-**-*-*-*-**-*-*-*-**-*-*-*-*/
+  section#contact {
+    background-position: 15% 5%;
   }
 }
