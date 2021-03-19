@@ -419,8 +419,8 @@ section#services {
 .service i,
 .services--title {
   margin-bottom: 2rem;
-  font-size: calc(1.75rem + 1vw);
-  line-height: calc(0.127rem + 3.52vh);
+  font-size: calc(2.5rem + 0.68vw);
+  line-height: calc(1.5rem + 2.5vh);
 }
 
 .service i {
@@ -458,7 +458,7 @@ section#skills {
 
 .skills__design--title,
 .skills__coding--title {
-  font-size: calc(1.3rem + 1vw);
+  font-size: calc(2.5rem + 0.68vw);
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
